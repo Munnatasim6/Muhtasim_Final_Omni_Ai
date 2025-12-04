@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # 1. API GATEWAY (User Access)
+  # 1. API GATEWAY
   api-gateway:
     build:
       context: .
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./apps/api-gateway:/app/api
       - ./libs:/app/libs
-      # লিগ্যাসি সাপোর্টের জন্য ব্যাকএন্ড রাখা হলো, পরে সরানো যাবে
+      # Fix: Legacy backup mounting
       - ./legacy_backup/backend:/app/backend
       - ./legacy_backup/core:/app/core
     environment:
@@ -25,7 +25,7 @@ services:
       - redis
       - timescaledb
 
-  # 2. FRONTEND (Dashboard)
+  # 2. FRONTEND DASHBOARD
   dashboard:
     build:
       context: ./apps/dashboard/frontend
@@ -35,17 +35,29 @@ services:
     networks:
       - ai-network
 
-  # 3. RUST ENGINE (Trading Core)
+  # 3. RUST EXECUTION ENGINE
   execution-engine:
     build:
       context: ./services/execution-engine/rust_core
-      dockerfile: Dockerfile # নোট: এখানে একটি সাধারণ Dockerfile লাগবে
+      dockerfile: Dockerfile
     volumes:
       - ./services/execution-engine/rust_core:/app
     networks:
       - ai-network
 
-  # 4. DATABASE Services
+  # 4. AI BRAIN
+  ai-brain:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/brain.Dockerfile
+    volumes:
+      - ./services/ai-brain:/app/brain
+      - ./libs:/app/libs
+      - ./legacy_backup/core:/app/core
+    networks:
+      - ai-network
+
+  # DATABASE SERVICES
   timescaledb:
     image: timescale/timescaledb:latest-pg14
     ports:
