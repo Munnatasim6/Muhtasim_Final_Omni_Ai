@@ -1,0 +1,13 @@
+D:\muhtasim_AI_Bot\rust_core\target\release\deps\pyo3_build_config-e6ebe10b511d6b95.d: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\errors.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\impl_.rs D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config-file.txt D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config.txt
+
+D:\muhtasim_AI_Bot\rust_core\target\release\deps\libpyo3_build_config-e6ebe10b511d6b95.rlib: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\errors.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\impl_.rs D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config-file.txt D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config.txt
+
+D:\muhtasim_AI_Bot\rust_core\target\release\deps\libpyo3_build_config-e6ebe10b511d6b95.rmeta: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\errors.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\impl_.rs D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config-file.txt D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config.txt
+
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\lib.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\errors.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.19.2\src\impl_.rs:
+D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config-file.txt:
+D:\muhtasim_AI_Bot\rust_core\target\release\build\pyo3-build-config-eb13fd4e885f78bf\out/pyo3-build-config.txt:
+
+# env-dep:OUT_DIR=D:\\muhtasim_AI_Bot\\rust_core\\target\\release\\build\\pyo3-build-config-eb13fd4e885f78bf\\out

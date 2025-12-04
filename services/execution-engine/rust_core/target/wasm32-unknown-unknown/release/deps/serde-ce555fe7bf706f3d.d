@@ -1,0 +1,14 @@
+D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\deps\serde-ce555fe7bf706f3d.d: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\build\serde-f874f0779bed5983\out/private.rs
+
+D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\deps\libserde-ce555fe7bf706f3d.rlib: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\build\serde-f874f0779bed5983\out/private.rs
+
+D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\deps\libserde-ce555fe7bf706f3d.rmeta: C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\build\serde-f874f0779bed5983\out/private.rs
+
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\windows10\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+D:\muhtasim_AI_Bot\rust_core\target\wasm32-unknown-unknown\release\build\serde-f874f0779bed5983\out/private.rs:
+
+# env-dep:OUT_DIR=D:\\muhtasim_AI_Bot\\rust_core\\target\\wasm32-unknown-unknown\\release\\build\\serde-f874f0779bed5983\\out
