@@ -1,0 +1,51 @@
+# Rust Ignore
+target/
+**/*/target/
+Cargo.lock
+
+# Python Ignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+legacy_backup/backend/.venv
+
+# Environment Variables
+.env
+.env.*
+
+# IDE Settings
+.vscode/
+.idea/
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+
+# Node
+node_modules/
+
+# Logs
+*.log
+npm-debug.log
+yarn-error.log
+celerybeat-schedule
+
+# Temporary Files
+*.swp
+*.swo
+*~
+
+# Coverage Reports
+coverage/
+.nyc_output/
+
+# Local Configs
+docker-compose.override.yml
