@@ -65,7 +65,7 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-admin}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
-      - POSTGRES_DB=muhtasim_bot
+      - POSTGRES_DB=omni_ai_db
     volumes:
       - timescaledb_data:/var/lib/postgresql/data
     networks:
