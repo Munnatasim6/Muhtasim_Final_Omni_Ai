@@ -18,13 +18,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # ডিপেন্ডেন্সি ইনস্টল
-COPY backend/requirements.txt .
+COPY legacy_backup/backend/requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 # AI ব্রেইন সার্ভিসের কোড কপি করা
 COPY libs /app/libs
-COPY core /app/core
+COPY legacy_backup/core /app/core
 COPY services/ai-brain /app/brain
 
 # মডেল রাখার ফোল্ডার তৈরি করা

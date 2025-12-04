@@ -1,25 +1,7 @@
 version: '3.8'
 
 services:
-  # ---------------------------
-  # 1. FRONTEND (User Interface)
-  # ---------------------------
-  dashboard:
-    build:
-      context: ./apps/dashboard/frontend
-      dockerfile: Dockerfile
-    ports:
-      - "3000:80"
-    environment:
-      - REACT_APP_API_URL=http://localhost:8000
-    networks:
-      - ai-network
-    depends_on:
-      - api-gateway
-
-  # ---------------------------
-  # 2. API GATEWAY (Entry Point)
-  # ---------------------------
+  # 1. API GATEWAY (User Access)
   api-gateway:
     build:
       context: .
@@ -29,8 +11,11 @@ services:
     volumes:
       - ./apps/api-gateway:/app/api
       - ./libs:/app/libs
-      - ./backend:/app/backend # Legacy support er jonno
+      # লিগ্যাসি সাপোর্টের জন্য ব্যাকএন্ড রাখা হলো, পরে সরানো যাবে
+      - ./legacy_backup/backend:/app/backend
+      - ./legacy_backup/core:/app/core
     environment:
+      - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
       - DATABASE_URL=${DATABASE_URL}
       - REDIS_URL=redis://redis:6379
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
@@ -40,58 +25,34 @@ services:
       - redis
       - timescaledb
 
-  # ---------------------------
-  # 3. EXECUTION ENGINE (Rust)
-  # ---------------------------
+  # 2. FRONTEND (Dashboard)
+  dashboard:
+    build:
+      context: ./apps/dashboard/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    networks:
+      - ai-network
+
+  # 3. RUST ENGINE (Trading Core)
   execution-engine:
     build:
       context: ./services/execution-engine/rust_core
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile # নোট: এখানে একটি সাধারণ Dockerfile লাগবে
     volumes:
       - ./services/execution-engine/rust_core:/app
-    environment:
-      - RUST_LOG=info
     networks:
       - ai-network
-    deploy:
-      resources:
-        limits:
-          cpus: '2.0'
-          memory: 4G
 
-  # ---------------------------
-  # 4. AI BRAIN (Python Intelligence)
-  # ---------------------------
-  ai-brain:
-    build:
-      context: .
-      dockerfile: infrastructure/docker/brain.Dockerfile
-    volumes:
-      - ./services/ai-brain:/app/brain
-      - ./libs:/app/libs
-      - ./core:/app/core # Legacy core access
-    environment:
-      - MODEL_PATH=/app/data/models
-    networks:
-      - ai-network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [ gpu ]
-
-  # ---------------------------
-  # 5. INFRASTRUCTURE (DB & Cache)
-  # ---------------------------
+  # 4. DATABASE Services
   timescaledb:
     image: timescale/timescaledb:latest-pg14
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
       - POSTGRES_DB=muhtasim_bot
     volumes:
       - timescaledb_data:/var/lib/postgresql/data
@@ -102,8 +63,6 @@ services:
     image: redis:alpine
     ports:
       - "6379:6379"
-    volumes:
-      - redis_data:/data
     networks:
       - ai-network
 
@@ -113,4 +72,3 @@ networks:
 
 volumes:
   timescaledb_data:
-  redis_data:

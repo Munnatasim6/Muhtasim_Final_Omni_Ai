@@ -16,7 +16,8 @@ RUN apt-get update \
 
 # রিকোয়ারমেন্টস ফাইল কপি করা এবং ইনস্টল করা
 # নোট: আমরা ধরে নিচ্ছি আপনার মূল requirements.txt টি backend ফোল্ডারে আছে
-COPY backend/requirements.txt .
+# যেহেতু backend এখন legacy_backup এ আছে
+COPY legacy_backup/backend/requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
@@ -25,13 +26,14 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY libs /app/libs
 
 # ২. লিগ্যাসি কোড সাপোর্ট (পুরানো ইম্পোর্ট ঠিক রাখার জন্য)
-COPY backend /app/backend
+COPY legacy_backup/backend /app/backend
+COPY legacy_backup/core /app/core
 
 # ৩. মেইন অ্যাপ (API Gateway)
 COPY apps/api-gateway /app/api
 
 # এনভায়রনমেন্ট ভেরিয়েবল সেট করা যাতে পাইথন মডিউলগুলো খুঁজে পায়
-ENV PYTHONPATH=/app:/app/libs:/app/backend
+ENV PYTHONPATH=/app:/app/libs:/app/backend:/app/core
 
 # কন্টেইনারের পোর্ট এক্সপোজ করা
 EXPOSE 8000
