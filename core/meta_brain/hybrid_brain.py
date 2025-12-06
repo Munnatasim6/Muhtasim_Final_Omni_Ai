@@ -12,7 +12,7 @@ class HybridBrain:
             logger.warning("⚠️ Gemini API Key missing! Brain runs in dummy mode.")
             self.model = None
         else:
-            genai.configure(api_key=self.api_key)
+            genai.configure(api_key=self.api_key, transport='rest')
             self.model = genai.GenerativeModel('gemini-1.5-flash')
             logger.info("✅ Gemini 1.5 Flash Connected")
 
