@@ -33,7 +33,7 @@ class GlobalLiquidityWall:
             ccxt.bybit(),
             ccxt.kraken(),
             ccxt.kucoin(),
-            ccxt.okx()
+            # ccxt.okx()
         ]
         self.depth_limit = 100  # Number of levels to fetch per exchange
 

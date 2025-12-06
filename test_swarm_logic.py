@@ -5,7 +5,11 @@ import os
 from dotenv import load_dotenv
 
 # Load env vars first
-load_dotenv()
+# Load env vars first
+env_path = os.path.abspath(".env")
+load_dotenv(env_path)
+print(f"DEBUG: Loading .env from {env_path}")
+print(f"DEBUG: GEMINI_API_KEY Found? {'Yes' if os.getenv('GEMINI_API_KEY') else 'No'}")
 
 
 # ১. পাথ সেটআপ: যাতে legacy_backup ফোল্ডারের কোডগুলো খুঁজে পাওয়া যায়
