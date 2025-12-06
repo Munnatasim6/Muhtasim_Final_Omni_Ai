@@ -57,6 +57,10 @@ services:
       - ./legacy_backup/core:/app/core
     networks:
       - ai-network
+    environment:
+      - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
+      - REDIS_URL=redis://redis:6379
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
 
   # DATABASE SERVICES
   timescaledb:
