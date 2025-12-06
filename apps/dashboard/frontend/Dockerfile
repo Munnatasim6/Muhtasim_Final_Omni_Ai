@@ -52,6 +52,9 @@ RUN npm run build
 # Stage 3: Serve the application with Nginx
 FROM nginx:alpine
 
+# Copy custom Nginx config
+COPY apps/dashboard/frontend/nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copy the build output from the previous stage to the Nginx html directory
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
 
