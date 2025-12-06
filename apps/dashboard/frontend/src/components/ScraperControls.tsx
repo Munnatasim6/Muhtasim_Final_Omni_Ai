@@ -1,14 +1,16 @@
+
 import React, { useState } from 'react';
 import { Server, Activity, AlertTriangle } from 'lucide-react';
 
 const ScraperControls: React.FC = () => {
-  const [replicas, setReplicas] = useState<number>(4);
+  // Optimized for 12GB RAM: Default starts at 1, allows scaling from 1
+  const [replicas, setReplicas] = useState<number>(1);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   const handleScale = async () => {
-    if (replicas < 4) {
-      setMessage("Minimum 4 scrapers required!");
+    if (replicas < 1) {
+      setMessage("Minimum 1 scraper required!");
       return;
     }
 
@@ -23,7 +25,7 @@ const ScraperControls: React.FC = () => {
       });
 
       const data = await response.json();
-      
+
       if (response.ok) {
         setMessage(`✅ Success: ${data.message}`);
       } else {
@@ -46,16 +48,16 @@ const ScraperControls: React.FC = () => {
 
       <div className="flex flex-col md:flex-row items-center gap-6">
         <div className="flex-1">
-          <label className="block text-gray-400 text-sm mb-2">Target Replicas (Min: 4)</label>
+          <label className="block text-gray-400 text-sm mb-2">Target Replicas (Optimized: 1-2)</label>
           <div className="flex items-center gap-4">
-            <button 
-              onClick={() => setReplicas(Math.max(4, replicas - 1))}
+            <button
+              onClick={() => setReplicas(Math.max(1, replicas - 1))}
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-bold transition-colors"
             >
               -
             </button>
             <span className="text-2xl font-mono text-blue-300 w-12 text-center">{replicas}</span>
-            <button 
+            <button
               onClick={() => setReplicas(replicas + 1)}
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-bold transition-colors"
             >
@@ -66,7 +68,7 @@ const ScraperControls: React.FC = () => {
 
         <button
           onClick={handleScale}
-          disabled={loading || replicas < 4}
+          disabled={loading || replicas < 1}
           className={`
             px-6 py-3 rounded-lg font-bold text-white flex items-center gap-2 transition-all
             ${loading ? 'bg-gray-600 cursor-wait' : 'bg-blue-600 hover:bg-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.5)]'}
@@ -78,14 +80,14 @@ const ScraperControls: React.FC = () => {
       </div>
 
       {message && (
-        <div className={`mt-4 p-3 rounded-lg text-sm font-medium flex items-center gap-2 ${message.includes('Error') || message.includes('Minimum') ? 'bg-red-900/50 text-red-200' : 'bg-green-900/50 text-green-200'}`}>
-          {message.includes('Error') || message.includes('Minimum') ? <AlertTriangle size={16} /> : <Activity size={16} />}
+        <div className={`mt-4 p-3 rounded-lg text-sm font-medium flex items-center gap-2 ${message.includes('Error') ? 'bg-red-900/50 text-red-200' : 'bg-green-900/50 text-green-200'}`}>
+          {message.includes('Error') ? <AlertTriangle size={16} /> : <Activity size={16} />}
           {message}
         </div>
       )}
-      
+
       <p className="text-xs text-gray-500 mt-4">
-        * Scaling operations may take a few seconds. Ensure Docker is running.
+        * Note for Core i3/12GB RAM: Keep replicas between 1-2 to avoid system lag.
       </p>
     </div>
   );

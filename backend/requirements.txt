@@ -2,8 +2,6 @@
 ccxt>=4.0.0
 aiohttp>=3.8.0
 websockets>=10.0
-# asyncio is part of stdlib, but sometimes included for backports. Removing if not strictly needed or keeping if user had it. 
-# It's usually safe to remove 'asyncio' from requirements.txt for Py3.7+
 python-dotenv>=1.0.0
 pydantic
 pydantic-settings>=2.0.0
@@ -12,20 +10,8 @@ typing-extensions
 # Data Science & AI
 numpy>=1.23.0
 pandas>=1.5.0
-# pandas-ta
 scipy
 scikit-learn>=1.0.0
-# torch>=2.0.0
-# torchvision
-# torchaudio
-# transformers
-# stable-baselines3[extra]>=2.0.0
-# gymnasium>=0.28.0
-# ray[rllib]>=2.5.0
-# shimmy>=0.2.1
-# openai
-# anthropic
-# langchain_community
 
 # Web3 & DeFi
 web3>=6.0.0
@@ -41,34 +27,18 @@ neo4j
 fastapi>=0.95.0
 uvicorn>=0.22.0
 requests>=2.28.0
-# gql
-# uvloop; sys_platform != 'win32'
 
 # Social & Data Sources
 yfinance>=0.2.0
 requests_toolbelt
-# tweepy
-# telethon
-# twikit
+twikit>=1.0.0
 pytrends
-# mplfinance
-# opencv-python
-
-# Rust Integration
-# maturin>=1.0.0
-# pyo3>=0.19.0
-
-
-# Utils & Infrastructure
-# prometheus-client>=0.16.0
-# networkx
-# pyserial
-psutil>=5.9.0
-
-# Ultimate Hedge Fund Modules
 beautifulsoup4>=4.10.0
 telethon>=1.24.0
 discord.py>=2.0.0
 gql>=3.4.0
 lxml>=4.9.0
-google-generativeai>=0.8.3
+google-generativeai>=0.3.0
+
+# Utils
+psutil>=5.9.0
