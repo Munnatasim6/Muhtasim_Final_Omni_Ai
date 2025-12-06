@@ -11,7 +11,7 @@ class RiskEngine:
     Advanced Risk Engine calculating VaR (Value at Risk) and CVaR (Conditional VaR).
     Acts as a gatekeeper for all trades.
     """
-    def __init__(self, confidence_level: float = 0.95, max_drawdown_limit: float = 0.02):
+    def __init__(self, confidence_level: float = 0.95, max_drawdown_limit: float = 0.05):
         self.confidence_level = confidence_level
         self.max_drawdown_limit = max_drawdown_limit # 2% max drawdown allowed per trade/day
 

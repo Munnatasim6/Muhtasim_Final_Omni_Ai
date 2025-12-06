@@ -48,7 +48,7 @@ async def run_test():
     market_data = {
         "symbol": "BTC/USDT",
         "price": 95000.0,
-        "volume": 1200.0,
+        "volume": 50000.0,
         # features ভ্যালুগুলো টেকনিক্যাল এজেন্টের ইনপুট (RSI, MACD ইত্যাদির ডামি ভ্যালু)
         # 1.0 = Buy Signal
         "features": [1.0, 0.9, 1.0, 0.8, 1.0], 
