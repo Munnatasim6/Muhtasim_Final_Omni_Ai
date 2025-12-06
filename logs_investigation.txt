@@ -1,0 +1,203 @@
+time="2025-12-05T22:30:53+06:00" level=warning msg="The \"DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2025-12-05T22:30:53+06:00" level=warning msg="F:\\Muhtasim_Final_Omni_Ai\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+execution-engine-1  | Execution Engine (rust_core) Service Started.
+execution-engine-1  | Running in loop to keep container alive...
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+execution-engine-1  | Heartbeat: Execution Engine is alive.
+redis-1             | Starting Redis Server
+redis-1             | 1:C 05 Dec 2025 16:24:17.895 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1             | 1:C 05 Dec 2025 16:24:17.895 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=1, just started
+redis-1             | 1:C 05 Dec 2025 16:24:17.895 * Configuration loaded
+redis-1             | 1:M 05 Dec 2025 16:24:17.899 * monotonic clock: POSIX clock_gettime
+redis-1             | 1:M 05 Dec 2025 16:24:17.964 * Running mode=standalone, port=6379.
+redis-1             | 1:M 05 Dec 2025 16:24:17.985 * <bf> RedisBloom version 8.4.0 (Git=unknown)
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> Registering configuration options: [
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ bf-error-rate       :      0.01 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ bf-initial-size     :       100 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ bf-expansion-factor :         2 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ cf-bucket-size      :         2 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ cf-initial-size     :      1024 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ cf-max-iterations   :        20 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ cf-expansion-factor :         1 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.986 * <bf> 	{ cf-max-expansions   :        32 }
+redis-1             | 1:M 05 Dec 2025 16:24:17.987 * <bf> ]
+redis-1             | 1:M 05 Dec 2025 16:24:17.987 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+redis-1             | 1:M 05 Dec 2025 16:24:18.220 * <search> Redis version found by RedisSearch : 8.4.0 - oss
+redis-1             | 1:M 05 Dec 2025 16:24:18.220 * <search> RediSearch version 8.4.2 (Git=9e2b676)
+redis-1             | 1:M 05 Dec 2025 16:24:18.249 * <search> Low level api version 1 initialized successfully
+redis-1             | 1:M 05 Dec 2025 16:24:18.257 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, oom policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, default scorer: BM25STD, 
+redis-1             | 1:M 05 Dec 2025 16:24:18.294 * <search> Initialized thread pools!
+redis-1             | 1:M 05 Dec 2025 16:24:18.294 * <search> Disabled workers threadpool of size 0
+redis-1             | 1:M 05 Dec 2025 16:24:18.315 * <search> Subscribe to config changes
+redis-1             | 1:M 05 Dec 2025 16:24:18.315 * <search> Subscribe to cluster slot migration events
+redis-1             | 1:M 05 Dec 2025 16:24:18.315 * <search> Enabled role change notification
+redis-1             | 1:M 05 Dec 2025 16:24:18.315 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+redis-1             | 1:M 05 Dec 2025 16:24:18.316 * <search> Register write commands
+redis-1             | 1:M 05 Dec 2025 16:24:18.316 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> RedisTimeSeries version 80400, git_sha=3520a1568ad69076d60885c70711fbdc9b448749
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> Redis version found by RedisTimeSeries : 8.4.0 - oss
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> Registering configuration options: [
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-compaction-policy   :              }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-num-threads         :            3 }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-retention-policy    :            0 }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-duplicate-policy    :        block }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-encoding            :   compressed }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+redis-1             | 1:M 05 Dec 2025 16:24:18.354 * <timeseries> ]
+redis-1             | 1:M 05 Dec 2025 16:24:18.358 * <timeseries> Detected redis oss
+redis-1             | 1:M 05 Dec 2025 16:24:18.374 * <timeseries> Subscribe to ASM events
+redis-1             | 1:M 05 Dec 2025 16:24:18.374 * <timeseries> Enabled diskless replication
+redis-1             | 1:M 05 Dec 2025 16:24:18.374 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+redis-1             | 1:M 05 Dec 2025 16:24:18.467 * <ReJSON> Created new data type 'ReJSON-RL'
+redis-1             | 1:M 05 Dec 2025 16:24:18.475 * <ReJSON> version: 80400 git sha: unknown branch: unknown
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V1 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V2 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V3 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V4 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V5 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Exported RedisJSON_V6 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Enabled diskless replication
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <ReJSON> Initialized shared string cache, thread safe: true.
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+redis-1             | 1:M 05 Dec 2025 16:24:18.476 * <search> Acquired RedisJSON_V6 API
+redis-1             | 1:M 05 Dec 2025 16:24:18.477 * Server initialized
+redis-1             | 1:M 05 Dec 2025 16:24:18.483 * Ready to accept connections tcp
+dashboard-1         | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+dashboard-1         | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+dashboard-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+dashboard-1         | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+dashboard-1         | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+dashboard-1         | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+dashboard-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+dashboard-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+dashboard-1         | /docker-entrypoint.sh: Configuration complete; ready for start up
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: using the "epoll" event method
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: nginx/1.29.3
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: OS: Linux 6.6.87.2-microsoft-standard-WSL2
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: start worker processes
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: start worker process 31
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: start worker process 32
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: start worker process 33
+dashboard-1         | 2025/12/05 16:24:18 [notice] 1#1: start worker process 34
+dashboard-1         | 2025/12/05 16:29:12 [error] 31#31: *1 open() "/usr/share/nginx/html/training" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /training HTTP/1.1", host: "localhost:3000"
+dashboard-1         | 172.18.0.1 - - [05/Dec/2025:16:29:12 +0000] "GET /training HTTP/1.1" 404 555 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" "-"
+dashboard-1         | 2025/12/05 16:29:12 [error] 31#31: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/training"
+dashboard-1         | 172.18.0.1 - - [05/Dec/2025:16:29:12 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:3000/training" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" "-"
+api-gateway-1       | INFO:core.aggregator.global_book:Top Asks (Resistance):
+api-gateway-1       |     side  price_bucket    volume         exchange
+api-gateway-1       | 72   ask       89138.0  2.611000         [kraken]
+timescaledb-1       | 
+timescaledb-1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+timescaledb-1       | 
+timescaledb-1       | 2025-12-05 16:24:18.948 UTC [1] LOG:  starting PostgreSQL 14.17 on x86_64-pc-linux-musl, compiled by gcc (Alpine 13.2.1_git20240309) 13.2.1 20240309, 64-bit
+timescaledb-1       | 2025-12-05 16:24:18.948 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+timescaledb-1       | 2025-12-05 16:24:18.948 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+api-gateway-1       | 120  ask       89417.0  2.021000         [kraken]
+api-gateway-1       | 47   ask       89069.0  1.357222  [bybit, kucoin]
+api-gateway-1       | INFO:SocialScraper:[Twitter] Match Found: Market crash incoming? $ETH dropping.
+api-gateway-1       | INFO:SocialScraper:📡 Published to 'market_sentiment'
+api-gateway-1       | INFO:core.aggregator.global_book:Fetching Global Liquidity for BTC/USDT...
+api-gateway-1       | WARNING:core.aggregator.global_book:Failed to fetch BTC/USDT from okx: okx GET https://www.okx.com/api/v5/public/instruments?instType=SPOT 403 Forbidden <!DOCTYPE html>
+api-gateway-1       | <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+api-gateway-1       | <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+api-gateway-1       | <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+timescaledb-1       | 2025-12-05 16:24:19.044 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+timescaledb-1       | 2025-12-05 16:24:19.206 UTC [26] LOG:  database system was shut down at 2025-12-05 16:18:13 UTC
+timescaledb-1       | 2025-12-05 16:24:19.334 UTC [1] LOG:  database system is ready to accept connections
+timescaledb-1       | 2025-12-05 16:24:19.349 UTC [32] LOG:  TimescaleDB background worker launcher connected to shared catalogs
+api-gateway-1       | <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+api-gateway-1       | <head>
+api-gateway-1       | <title>Attention Required! | Cloudflare</title>
+api-gateway-1       | <meta charset="UTF-8" />
+api-gateway-1       | <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+api-gateway-1       | <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+api-gateway-1       | <meta name="robots" content="noindex, nofollow" />
+api-gateway-1       | <meta name="viewport" content="width=device-width,initial-scale=1" />
+api-gateway-1       | <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+api-gateway-1       | <!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+api-gateway-1       | <style>body{margin:0;padding:0}</style>
+api-gateway-1       | 
+api-gateway-1       | 
+api-gateway-1       | <!--[if gte IE 10]><!-->
+api-gateway-1       | <script>
+api-gateway-1       |   if (!navigator.cookieEnabled) {
+api-gateway-1       |     window.addEventListener('DOMContentLoaded', function () {
+api-gateway-1       |       var cookieEl = document.getElementById('cookie-alert');
+api-gateway-1       |       cookieEl.style.display = 'block';
+api-gateway-1       |     })
+api-gateway-1       |   }
+api-gateway-1       | </script>
+api-gateway-1       | <!--<![endif]-->
+api-gateway-1       | 
+api-gateway-1       | </head>
+api-gateway-1       | <body>
+api-gateway-1       |   <div id="cf-wrapper">
+api-gateway-1       |     <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+api-gateway-1       |     <div id="cf-error-details" class="cf-error-details-wrapper">
+api-gateway-1       |       <div class="cf-wrapper cf-header cf-error-overview">
+api-gateway-1       |         <h1 data-translate="block_headline">Sorry, you have been blocked</h1>
+api-gateway-1       |         <h2 class="cf-subheadline"><span data-translate="unable_to_access">You are unable to access</span> okx.com</h2>
+api-gateway-1       |       </div><!-- /.header -->
+api-gateway-1       | 
+api-gateway-1       |       <div class="cf-section cf-highlight">
+api-gateway-1       |         <div class="cf-wrapper">
+api-gateway-1       |           <div class="cf-screenshot-container cf-screenshot-full">
+api-gateway-1       |             
+api-gateway-1       |               <span class="cf-no-screenshot error"></span>
+api-gateway-1       |             
+api-gateway-1       |           </div>
+api-gateway-1       |         </div>
+api-gateway-1       |       </div><!-- /.captcha-container -->
+api-gateway-1       | 
+api-gateway-1       |       <div class="cf-section cf-wrapper">
+api-gateway-1       |         <div class="cf-columns two">
+api-gateway-1       |           <div class="cf-column">
+api-gateway-1       |             <h2 data-translate="blocked_why_headline">Why have I been blocked?</h2>
+api-gateway-1       | 
+api-gateway-1       |             <p data-translate="blocked_why_detail">This website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.</p>
+api-gateway-1       |           </div>
+api-gateway-1       | 
+api-gateway-1       |           <div class="cf-column">
+api-gateway-1       |             <h2 data-translate="blocked_resolve_headline">What can I do to resolve this?</h2>
+api-gateway-1       | 
+api-gateway-1       |             <p data-translate="blocked_resolve_detail">You can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.</p>
+api-gateway-1       |           </div>
+api-gateway-1       |         </div>
+api-gateway-1       |       </div><!-- /.section -->
+api-gateway-1       | 
+api-gateway-1       |       <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+api-gateway-1       |     <p class="text-13">
+api-gateway-1       |       <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9a94ee19efed5942</strong></span>
+api-gateway-1       |       <span class="cf-footer-separator sm:hidden">&bull;</span>
+api-gateway-1       |       <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+api-gateway-1       |         Your IP:
+api-gateway-1       |         <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+api-gateway-1       |         <span class="hidden" id="cf-footer-ip">103.217.111.41</span>
+api-gateway-1       |         <span class="cf-footer-separator sm:hidden">&bull;</span>
+api-gateway-1       |       </span>
+api-gateway-1       |       <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
+api-gateway-1       |       
+api-gateway-1       |     </p>
+api-gateway-1       |     <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+api-gateway-1       |   </div><!-- /.error-footer -->
+api-gateway-1       | 
+api-gateway-1       |     </div><!-- /#cf-error-details -->
+api-gateway-1       |   </div><!-- /#cf-wrapper -->
+api-gateway-1       | 
+api-gateway-1       |   <script>
+api-gateway-1       |     window._cf_translation = {};
+api-gateway-1       |     
+api-gateway-1       |     
+api-gateway-1       |   </script>
+api-gateway-1       | </body>
+api-gateway-1       | </html>
+api-gateway-1       | INFO:SocialScraper:[Twitter] Match Found: Market crash incoming? $ETH dropping.
+api-gateway-1       | INFO:SocialScraper:📡 Published to 'market_sentiment'

@@ -1,0 +1,144 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 770B 0.0s done
+#1 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/rust:1.83
+#2 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/debian:bookworm-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [stage-1 1/4] FROM docker.io/library/debian:bookworm-slim@sha256:b4aa902587c2e61ce789849cb54c332b0400fe27b1ee33af4669e1f7e7c3e22f
+#6 resolve docker.io/library/debian:bookworm-slim@sha256:b4aa902587c2e61ce789849cb54c332b0400fe27b1ee33af4669e1f7e7c3e22f
+#6 resolve docker.io/library/debian:bookworm-slim@sha256:b4aa902587c2e61ce789849cb54c332b0400fe27b1ee33af4669e1f7e7c3e22f 0.1s done
+#6 DONE 0.2s
+
+#7 [stage-1 2/4] WORKDIR /app
+#7 CACHED
+
+#8 [builder 1/5] FROM docker.io/library/rust:1.83@sha256:a45bf1f5d9af0a23b26703b3500d70af1abff7f984a7abef5a104b42c02a292b
+#8 resolve docker.io/library/rust:1.83@sha256:a45bf1f5d9af0a23b26703b3500d70af1abff7f984a7abef5a104b42c02a292b 0.1s done
+#8 DONE 0.2s
+
+#5 [internal] load build context
+#5 transferring context: 1.10kB 0.0s done
+#5 DONE 0.1s
+
+#9 [builder 2/5] WORKDIR /app
+#9 CACHED
+
+#10 [builder 3/5] RUN apt-get update && apt-get install -y     build-essential     pkg-config     libssl-dev     && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [builder 4/5] COPY . .
+#11 DONE 0.1s
+
+#12 [builder 5/5] RUN cargo build --release
+#12 0.656     Updating crates.io index
+#12 4.523  Downloading crates ...
+#12 4.932   Downloaded indoc v1.0.9
+#12 5.002   Downloaded getrandom v0.2.16
+#12 5.073   Downloaded pyo3-macros v0.19.2
+#12 5.130   Downloaded autocfg v1.5.0
+#12 5.210   Downloaded wasm-bindgen-shared v0.2.106
+#12 5.231   Downloaded cfg-if v1.0.4
+#12 5.269   Downloaded unindent v0.1.11
+#12 5.287   Downloaded wasm-bindgen-macro v0.2.106
+#12 5.322   Downloaded rustversion v1.0.22
+#12 5.336   Downloaded scopeguard v1.2.0
+#12 5.357   Downloaded pyo3-build-config v0.19.2
+#12 5.360   Downloaded lock_api v0.4.14
+#12 5.384   Downloaded target-lexicon v0.12.16
+#12 5.453   Downloaded memoffset v0.9.1
+#12 5.479   Downloaded quote v1.0.42
+#12 5.496   Downloaded parking_lot_core v0.9.12
+#12 5.503   Downloaded smallvec v1.15.1
+#12 5.521   Downloaded once_cell v1.21.3
+#12 5.540   Downloaded wasm-bindgen-macro-support v0.2.106
+#12 5.550   Downloaded wasm-bindgen v0.2.106
+#12 5.558   Downloaded proc-macro2 v1.0.103
+#12 5.579   Downloaded parking_lot v0.12.5
+#12 5.591   Downloaded unicode-ident v1.0.22
+#12 5.619   Downloaded serde_derive v1.0.228
+#12 5.642   Downloaded serde_core v1.0.228
+#12 5.664   Downloaded pyo3-macros-backend v0.19.2
+#12 5.670   Downloaded pyo3-ffi v0.19.2
+#12 5.688   Downloaded serde v1.0.228
+#12 5.705   Downloaded bumpalo v3.19.0
+#12 5.787   Downloaded syn v1.0.109
+#12 5.869   Downloaded syn v2.0.111
+#12 5.906   Downloaded pyo3 v0.19.2
+#12 5.980   Downloaded libc v0.2.177
+#12 6.176    Compiling unicode-ident v1.0.22
+#12 6.176    Compiling proc-macro2 v1.0.103
+#12 6.176    Compiling quote v1.0.42
+#12 6.194    Compiling target-lexicon v0.12.16
+#12 6.386    Compiling wasm-bindgen-shared v0.2.106
+#12 6.811    Compiling libc v0.2.177
+#12 6.885    Compiling once_cell v1.21.3
+#12 7.244    Compiling rustversion v1.0.22
+#12 7.705    Compiling pyo3-build-config v0.19.2
+#12 8.480    Compiling syn v2.0.111
+#12 8.562    Compiling cfg-if v1.0.4
+#12 8.713    Compiling syn v1.0.109
+#12 9.733    Compiling parking_lot_core v0.9.12
+#12 10.18    Compiling autocfg v1.5.0
+#12 11.17    Compiling memoffset v0.9.1
+#12 12.08    Compiling smallvec v1.15.1
+#12 12.35    Compiling pyo3-ffi v0.19.2
+#12 12.66    Compiling serde_core v1.0.228
+#12 12.96    Compiling scopeguard v1.2.0
+#12 13.09    Compiling bumpalo v3.19.0
+#12 13.38    Compiling lock_api v0.4.14
+#12 14.02    Compiling pyo3 v0.19.2
+#12 14.65    Compiling wasm-bindgen v0.2.106
+#12 15.11    Compiling serde v1.0.228
+#12 16.06    Compiling parking_lot v0.12.5
+#12 17.03    Compiling wasm-bindgen-macro-support v0.2.106
+#12 21.76    Compiling pyo3-macros-backend v0.19.2
+#12 25.40    Compiling wasm-bindgen-macro v0.2.106
+#12 25.41    Compiling serde_derive v1.0.228
+#12 26.74    Compiling unindent v0.1.11
+#12 27.55    Compiling indoc v1.0.9
+#12 28.51    Compiling getrandom v0.2.16
+#12 29.62    Compiling pyo3-macros v0.19.2
+#12 41.81    Compiling omni_ai_core v0.1.0 (/app)
+#12 41.99 warning: unused variable: `current_price`
+#12 41.99   --> src/lib.rs:21:18
+#12 41.99    |
+#12 41.99 21 | fn is_safe_entry(current_price: f64, spread: f64, volatility: f64, max_spread: f64, max_volatility: f64) -> bool {
+#12 41.99    |                  ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_price`
+#12 41.99    |
+#12 41.99    = note: `#[warn(unused_variables)]` on by default
+#12 41.99 
+#12 42.67 warning: `omni_ai_core` (lib) generated 1 warning
+#12 42.67     Finished `release` profile [optimized] target(s) in 42.09s
+#12 DONE 43.1s
+
+#13 [stage-1 3/4] COPY --from=builder /app/target/release/rust_core /usr/local/bin/rust_core
+#13 ERROR: failed to calculate checksum of ref al3zt3onph2tvurofb0a40sh6::8p01fbg5up3nip6mowd1s3nip: "/app/target/release/rust_core": not found
+------
+ > [stage-1 3/4] COPY --from=builder /app/target/release/rust_core /usr/local/bin/rust_core:
+------
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+Dockerfile:20
+--------------------
+  18 |     WORKDIR /app
+  19 |     # বিল্ডার স্টেজ থেকে বাইনারি কপি করা হচ্ছে
+  20 | >>> COPY --from=builder /app/target/release/rust_core /usr/local/bin/rust_core
+  21 |     
+  22 |     # এক্সিকিউটেবল পারমিশন দেওয়া
+--------------------
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref al3zt3onph2tvurofb0a40sh6::8p01fbg5up3nip6mowd1s3nip: "/app/target/release/rust_core": not found

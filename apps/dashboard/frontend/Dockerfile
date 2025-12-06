@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
 RUN curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # Copy rust_core source
-COPY rust_core/ ./rust_core/
+# Copy rust_core source
+COPY services/execution-engine/rust_core/ ./rust_core/
 
 # Build WASM module
 WORKDIR /app/rust_core
@@ -27,7 +28,8 @@ FROM node:24-alpine as build
 WORKDIR /app
 
 # Copy package.json and package-lock.json from frontend directory
-COPY frontend/package*.json ./frontend/
+# Copy package.json and package-lock.json from frontend directory
+COPY apps/dashboard/frontend/package*.json ./frontend/
 
 # Set working directory to frontend
 WORKDIR /app/frontend
@@ -36,7 +38,8 @@ WORKDIR /app/frontend
 RUN npm install
 
 # Copy the rest of the frontend application code
-COPY frontend/ .
+# Copy the rest of the frontend application code
+COPY apps/dashboard/frontend/ .
 
 # Copy rust_core/pkg from the rust-builder stage
 # Frontend expects ../../../rust_core/pkg/rust_core

@@ -28,8 +28,8 @@ services:
   # 2. FRONTEND DASHBOARD
   dashboard:
     build:
-      context: ./apps/dashboard/frontend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: apps/dashboard/frontend/Dockerfile
     ports:
       - "3000:80"
     networks:

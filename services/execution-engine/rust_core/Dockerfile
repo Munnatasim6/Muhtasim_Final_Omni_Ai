@@ -1,6 +1,14 @@
 # Stage 1: Build
-FROM rust:1.75 as builder
+FROM rust:1.83 as builder
 WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    pkg-config \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY . .
 # রিলিজ মোডে বিল্ড করা হচ্ছে
 RUN cargo build --release

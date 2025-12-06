@@ -1,0 +1,52 @@
+time="2025-12-05T22:14:00+06:00" level=warning msg="The \"DATABASE_URL\" variable is not set. Defaulting to a blank string."
+time="2025-12-05T22:14:00+06:00" level=warning msg="F:\\Muhtasim_Final_Omni_Ai\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+api-gateway-1  |   File "/usr/local/lib/python3.10/site-packages/uvicorn/server.py", line 71, in serve
+api-gateway-1  |     await self._serve(sockets)
+api-gateway-1  |   File "/usr/local/lib/python3.10/site-packages/uvicorn/server.py", line 78, in _serve
+api-gateway-1  |     config.load()
+api-gateway-1  |   File "/usr/local/lib/python3.10/site-packages/uvicorn/config.py", line 439, in load
+api-gateway-1  |     self.loaded_app = import_from_string(self.app)
+api-gateway-1  |   File "/usr/local/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+api-gateway-1  |     module = importlib.import_module(module_str)
+api-gateway-1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+api-gateway-1  |     return _bootstrap._gcd_import(name[level:], package, level)
+api-gateway-1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+api-gateway-1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+api-gateway-1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+api-gateway-1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+api-gateway-1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+api-gateway-1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+api-gateway-1  |   File "/app/api/main.py", line 61, in <module>
+api-gateway-1  |     gas_watcher = GasWatcher()
+api-gateway-1  | NameError: name 'GasWatcher' is not defined
+api-gateway-1  | WARNING:  StatReload detected changes in 'api/main.py'. Reloading...
+api-gateway-1  | ⚠️ HybridBrain not found. Check path 'core/meta_brain/hybrid_brain.py'
+api-gateway-1  | INFO:SwarmManager:🚀 Initializing Neural Swarm System...
+api-gateway-1  | WARNING:SwarmManager:❌ HybridBrain module missing. Running in Technical-Only mode.
+api-gateway-1  | INFO:EvolutionEngine:Initializing population of 10 agents...
+api-gateway-1  | INFO:     Started server process [24]
+api-gateway-1  | INFO:     Waiting for application startup.
+api-gateway-1  | INFO:OmniTradeCore:🚀 Starting OmniTrade AI Core (Ultimate Hedge Fund Level)...
+api-gateway-1  | INFO:OmniTradeCore:✅ All Systems Operational: Alpha, Macro, Web3, & Sentiment Active.
+api-gateway-1  | INFO:MacroCorrelator:Fetching macro data for ['SP500', 'Gold', 'DXY', '10Y_Treasury'] and BTC-USD...
+api-gateway-1  | /app/core/macro_correlator.py:31: FutureWarning: YF.download() has changed argument auto_adjust default to True
+api-gateway-1  |   data = yf.download(tickers, period=period, interval=interval, progress=False)['Close']
+api-gateway-1  | INFO:yfinance:Failed to create TzCache, reason: Error creating TzCache folder: '/root/.cache/py-yfinance' reason: [Errno 17] File exists: '/root/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+api-gateway-1  | INFO:     Will watch for changes in these directories: ['/app']
+api-gateway-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-gateway-1  | INFO:     Started reloader process [1] using StatReload
+api-gateway-1  | ⚠️ HybridBrain not found. Check path 'core/meta_brain/hybrid_brain.py'
+api-gateway-1  | INFO:SwarmManager:🚀 Initializing Neural Swarm System...
+api-gateway-1  | WARNING:SwarmManager:❌ HybridBrain module missing. Running in Technical-Only mode.
+api-gateway-1  | INFO:EvolutionEngine:Initializing population of 10 agents...
+api-gateway-1  | INFO:     Started server process [7]
+api-gateway-1  | INFO:     Waiting for application startup.
+api-gateway-1  | INFO:OmniTradeCore:🚀 Starting OmniTrade AI Core (Ultimate Hedge Fund Level)...
+api-gateway-1  | INFO:OmniTradeCore:✅ All Systems Operational: Alpha, Macro, Web3, & Sentiment Active.
+api-gateway-1  | INFO:MacroCorrelator:Fetching macro data for ['SP500', 'Gold', 'DXY', '10Y_Treasury'] and BTC-USD...
+api-gateway-1  | /app/core/macro_correlator.py:31: FutureWarning: YF.download() has changed argument auto_adjust default to True
+api-gateway-1  |   data = yf.download(tickers, period=period, interval=interval, progress=False)['Close']
+api-gateway-1  | INFO:EvolutionEngine:--- Starting Generation 1 ---
+api-gateway-1  | INFO:EvolutionEngine:Best Agent: Agent(id=6, fitness=14.2470, params={'learning_rate': 0.002167734920938163, 'gamma': 0.9272855026781197, 'batch_size': 125, 'ent_coef': 0.018557451050486395})
+api-gateway-1  | INFO:EvolutionEngine:Generation complete.
+api-gateway-1  | INFO:core.scrapers.dao_tracker:Fetching active DAO proposals...
