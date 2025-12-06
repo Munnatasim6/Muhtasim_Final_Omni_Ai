@@ -10,16 +10,20 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .
-# রিলিজ মোডে বিল্ড করা হচ্ছে
-RUN cargo build --release
+
+# FIX: Explicitly build the binary "rust_core"
+RUN cargo build --release --bin rust_core
 
 # Stage 2: Run
 FROM debian:bookworm-slim
 WORKDIR /app
-# বিল্ডার স্টেজ থেকে বাইনারি কপি করা হচ্ছে
+
+# Install runtime dependencies for health checks if needed
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Copy the binary from the specific path
 COPY --from=builder /app/target/release/rust_core /usr/local/bin/rust_core
 
-# এক্সিকিউটেবল পারমিশন দেওয়া
 RUN chmod +x /usr/local/bin/rust_core
 
 CMD ["rust_core"]

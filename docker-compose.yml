@@ -16,8 +16,12 @@ services:
       - ./core:/app/core
     environment:
       - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
-      - DATABASE_URL=${DATABASE_URL}
-      - REDIS_URL=redis://redis:6379
+      - DB_HOST=timescaledb
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=omni_ai_db
       - GEMINI_API_KEY=${GEMINI_API_KEY}
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
     networks:
@@ -59,7 +63,8 @@ services:
       - ai-network
     environment:
       - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
-      - REDIS_URL=redis://redis:6379
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
       - GEMINI_API_KEY=${GEMINI_API_KEY}
 
   # DATABASE SERVICES

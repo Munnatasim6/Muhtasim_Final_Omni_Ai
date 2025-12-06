@@ -21,7 +21,7 @@ COPY libs /app/libs
 COPY services/ai-brain /app/brain
 
 # Fix: Legacy Core Support
-COPY legacy_backup/core /app/core
+COPY core /app/core
 COPY legacy_backup/backend /app/backend
 
 RUN mkdir -p /app/data/models
