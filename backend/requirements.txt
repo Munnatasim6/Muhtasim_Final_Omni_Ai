@@ -63,6 +63,7 @@ pytrends
 # prometheus-client>=0.16.0
 # networkx
 # pyserial
+psutil>=5.9.0
 
 # Ultimate Hedge Fund Modules
 beautifulsoup4>=4.10.0
