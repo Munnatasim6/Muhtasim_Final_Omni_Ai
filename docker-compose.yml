@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # 1. API GATEWAY
   api-gateway:
@@ -14,8 +12,9 @@ services:
       # Fix: Legacy backup mounting
       - ./legacy_backup/backend:/app/backend
       - ./core:/app/core
+      - ./services:/app/services
     environment:
-      - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
+      - PYTHONPATH=/app:/app/libs:/app/backend:/app/core:/app/services
       - DB_HOST=timescaledb
       - REDIS_HOST=redis
       - REDIS_PORT=6379

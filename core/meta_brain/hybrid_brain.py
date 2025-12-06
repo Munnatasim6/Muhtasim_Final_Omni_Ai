@@ -30,6 +30,7 @@ class HybridBrain:
             
             # আপনার পছন্দের মডেলগুলোর তালিকা (Priority অনুযায়ী)
             preferred_order = [
+                'models/gemini-2.5-flash',
                 'models/gemini-1.5-flash',
                 'models/gemini-1.5-pro',
                 'models/gemini-pro',

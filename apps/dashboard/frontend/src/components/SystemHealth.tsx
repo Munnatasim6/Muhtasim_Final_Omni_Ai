@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Server, Shield, Activity, HardDrive } from 'lucide-react';
+import { Cpu, Server, Shield, Activity, HardDrive, Zap } from 'lucide-react';
 import { useTradeStream } from '../hooks/useTradeStream';
 
 const SystemHealth: React.FC = () => {
@@ -12,6 +12,9 @@ const SystemHealth: React.FC = () => {
     const ram = system?.ram_usage || 0;
     const riskLevel = system?.risk_level || 'N/A';
     const uptime = system?.uptime || 'Connecting...';
+    // AI Quota
+    const aiQuota = system?.ai_quota || 0;
+    const aiQuotaMax = system?.ai_quota_max || 50;
 
     // স্ট্যাটাস অনুযায়ী কালার সেট করা
     const statusColor = status === 'ONLINE' ? 'text-emerald-400' : 'text-red-500';
@@ -73,6 +76,23 @@ const SystemHealth: React.FC = () => {
                         <div
                             className={`h-full rounded-full transition-all duration-500 ease-out ${ram > 90 ? 'bg-red-500' : 'bg-purple-500'}`}
                             style={{ width: `${Math.min(ram, 100)}%` }}
+                        />
+                    </div>
+                </div>
+
+                {/* AI API Quota */}
+                <div>
+                    <div className="flex justify-between mb-2">
+                        <div className="flex items-center gap-2 text-slate-300">
+                            <Zap className="w-4 h-4 text-yellow-400" />
+                            <span className="text-sm font-medium">AI API Quota</span>
+                        </div>
+                        <span className="text-sm font-bold text-white">{aiQuota} / {aiQuotaMax}</span>
+                    </div>
+                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                        <div
+                            className={`h-full rounded-full transition-all duration-500 ease-out ${aiQuota > 40 ? 'bg-red-500' : 'bg-yellow-500'}`}
+                            style={{ width: `${Math.min((aiQuota / aiQuotaMax) * 100, 100)}%` }}
                         />
                     </div>
                 </div>

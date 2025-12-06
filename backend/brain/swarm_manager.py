@@ -111,6 +111,8 @@ class SwarmManager:
         return {
             "action": action,
             "confidence": round(final_score, 2),
+            "reason": ai_result.get("reason", "Analysis Complete"),
+            "risk_status": risk_status,
             "details": {
                 "tech_score": tech_score,
                 "ai_reason": ai_result.get("reason"),
