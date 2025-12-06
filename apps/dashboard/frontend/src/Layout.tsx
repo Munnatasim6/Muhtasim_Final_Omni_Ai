@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Activity, Zap, Settings, Cpu } from 'lucide-react';
+import { LayoutDashboard, Activity, Zap, Settings, Cpu, TrendingUp } from 'lucide-react';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -11,6 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
     const navItems = [
         { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+        { path: '/live-chart', label: 'Live Chart', icon: TrendingUp }, // ✅ New Page
         { path: '/brain', label: 'Neural Swarm', icon: Cpu },
         { path: '/strategies', label: 'Strategies', icon: Zap },
         { path: '/training', label: 'Training Nexus', icon: Activity },
@@ -36,8 +37,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 key={item.path}
                                 to={item.path}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                        ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
-                                        : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+                                    ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20'
+                                    : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
                                     }`}
                             >
                                 <Icon className="w-5 h-5" />

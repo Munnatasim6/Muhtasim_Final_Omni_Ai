@@ -1,81 +1,60 @@
 import React, { useState } from 'react';
-import { Power, ShieldAlert } from 'lucide-react';
+import { Power, Play, AlertOctagon } from 'lucide-react';
 
-interface DashboardControlsProps {
-  onSystemStop?: () => void;
-}
+const DashboardControls: React.FC = () => {
+  const [status, setStatus] = useState<'ACTIVE' | 'STOPPED'>('ACTIVE');
+  const [loading, setLoading] = useState(false);
 
-const DashboardControls: React.FC<DashboardControlsProps> = ({ onSystemStop }) => {
-  const [isStopping, setIsStopping] = useState(false);
-  const [status, setStatus] = useState<'active' | 'stopping' | 'stopped'>('active');
-
-  const handleKillSwitch = async () => {
-    if (!window.confirm("WARNING: This will immediately cancel ALL open orders and stop the bot. Are you sure?")) {
-      return;
-    }
-
-    setIsStopping(true);
-    setStatus('stopping');
-
+  const callApi = async (endpoint: string) => {
+    setLoading(true);
     try {
-      // API call to backend kill switch
-      const response = await fetch('http://localhost:8000/api/system/kill', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        setStatus('stopped');
-        alert("System Emergency Stop Triggered Successfully.");
-        if (onSystemStop) onSystemStop();
-      } else {
-        alert("Failed to trigger Emergency Stop! Check console.");
-        setStatus('active');
+      const res = await fetch(`http://localhost:8000/api/system/${endpoint}`, { method: 'POST' });
+      if (res.ok) {
+        if (endpoint === 'kill') setStatus('STOPPED');
+        if (endpoint === 'resume') setStatus('ACTIVE');
+        alert(`System ${endpoint === 'kill' ? 'HALTED' : 'RESUMED'} successfully!`);
       }
-    } catch (error) {
-      console.error("Emergency Stop Error:", error);
-      alert("Network Error: Could not reach backend.");
-      setStatus('active');
-    } finally {
-      setIsStopping(false);
+    } catch (err) {
+      console.error(err);
+      alert('Command Failed! Check console.');
     }
+    setLoading(false);
   };
 
   return (
-    <div className="p-4 bg-gray-800 rounded-lg shadow-lg border border-gray-700">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-white flex items-center gap-2">
-          <ShieldAlert className="text-yellow-500" />
-          System Controls
-        </h2>
-        <span className={`px-3 py-1 rounded-full text-sm font-bold ${status === 'active' ? 'bg-green-900 text-green-400' :
-            status === 'stopping' ? 'bg-yellow-900 text-yellow-400' :
-              'bg-red-900 text-red-400'
+    <div className="p-6 bg-slate-900/50 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-xl">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-white">Emergency Override</h2>
+        <span className={`px-3 py-1 rounded-full text-xs font-bold ${status === 'ACTIVE' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'
           }`}>
-          {status.toUpperCase()}
+          {status}
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         <button
-          onClick={handleKillSwitch}
-          disabled={isStopping || status === 'stopped'}
-          className={`
-            flex items-center justify-center gap-3 px-6 py-4 rounded-lg font-bold text-lg transition-all
-            ${status === 'stopped'
-              ? 'bg-gray-600 cursor-not-allowed text-gray-400'
-              : 'bg-red-600 hover:bg-red-700 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)] hover:shadow-[0_0_25px_rgba(220,38,38,0.7)]'
-            }
-          `}
+          onClick={() => callApi('resume')}
+          disabled={loading || status === 'ACTIVE'}
+          className="flex items-center justify-center gap-2 p-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 disabled:text-slate-500 text-white font-bold transition-all shadow-lg shadow-emerald-900/20"
         >
-          <Power size={24} />
-          {isStopping ? 'STOPPING SYSTEM...' : 'EMERGENCY KILL SWITCH'}
+          <Play size={20} />
+          RESUME
         </button>
 
-        <p className="text-xs text-gray-400 text-center mt-2">
-          * Triggers immediate cancellation of all open orders and halts execution loop.
+        <button
+          onClick={() => callApi('kill')}
+          disabled={loading || status === 'STOPPED'}
+          className="flex items-center justify-center gap-2 p-4 rounded-xl bg-red-600 hover:bg-red-500 disabled:bg-slate-700 disabled:text-slate-500 text-white font-bold transition-all shadow-lg shadow-red-900/20 animate-pulse hover:animate-none"
+        >
+          <Power size={20} />
+          KILL SWITCH
+        </button>
+      </div>
+
+      <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg flex items-start gap-3">
+        <AlertOctagon className="text-yellow-500 shrink-0" size={18} />
+        <p className="text-xs text-yellow-200/80">
+          Warning: Kill Switch will immediately cancel all open orders and halt the Swarm Engine.
         </p>
       </div>
     </div>

@@ -1,0 +1,9 @@
+{
+    "name": "omnitrade-ai-root",
+    "version": "1.0.0",
+    "description": "Root package to proxy commands to frontend",
+    "scripts": {
+        "dev": "npm run dev --prefix apps/dashboard/frontend",
+        "install:frontend": "npm install --prefix apps/dashboard/frontend"
+    }
+}
