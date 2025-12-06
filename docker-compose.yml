@@ -13,11 +13,12 @@ services:
       - ./libs:/app/libs
       # Fix: Legacy backup mounting
       - ./legacy_backup/backend:/app/backend
-      - ./legacy_backup/core:/app/core
+      - ./core:/app/core
     environment:
       - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
       - DATABASE_URL=${DATABASE_URL}
       - REDIS_URL=redis://redis:6379
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
     networks:
       - ai-network
