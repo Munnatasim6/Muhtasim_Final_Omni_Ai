@@ -4,8 +4,9 @@ import sys
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load env vars first
 load_dotenv()
+
 
 # ১. পাথ সেটআপ: যাতে legacy_backup ফোল্ডারের কোডগুলো খুঁজে পাওয়া যায়
 sys.path.append(os.path.abspath("legacy_backup"))
@@ -31,14 +32,6 @@ async def run_test():
     print("🚀 STARTING DRY RUN: Swarm Intelligence Test")
     print("   লক্ষ্য: টেকনিক্যাল এজেন্ট এবং Gemini AI-এর সংযোগ পরীক্ষা")
     print("="*60 + "\n")
-
-    # Check API Key
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        print("⚠️  WARNING: GEMINI_API_KEY not found in .env file!")
-        print("   Please create a .env file with GEMINI_API_KEY=your_key_here")
-    else:
-        print("✅ GEMINI_API_KEY found in environment.")
 
     # ধাপ ১: ম্যানেজার ইনিশিলাইজেশন
     print("1️⃣  Initializing Swarm Manager...")
@@ -88,7 +81,7 @@ async def run_test():
     
     # AI এর মতামত (সবচেয়ে গুরুত্বপূর্ণ অংশ)
     ai_reason = details.get('ai_reason')
-    if ai_reason == "Brain Disabled" or ai_reason == "AI Error" or ai_reason == "No API Key":
+    if ai_reason == "Brain Disabled" or ai_reason == "AI Error":
         print(f"⚠️  AI Status:   ❌ {ai_reason} (API Key ঠিক আছে তো?)")
     else:
         print(f"🧠 AI Reason:   ✅ \"{ai_reason}\"")

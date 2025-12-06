@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 # Copy folders (New Structure)
 COPY libs /app/libs
-COPY apps/api-gateway /app/api
+COPY apps/api_gateway /app/api
 
 # Fix: Legacy code support (পুরনো কোড যেন কাজ করে)
 COPY legacy_backup/backend /app/backend

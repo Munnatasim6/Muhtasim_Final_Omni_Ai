@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./apps/api-gateway:/app/api
+      - ./apps/api_gateway:/app/api
       - ./libs:/app/libs
       # Fix: Legacy backup mounting
       - ./legacy_backup/backend:/app/backend
