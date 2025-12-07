@@ -21,6 +21,7 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=omni_ai_db
+      - DB_NAME=omni_ai_db
       - GEMINI_API_KEY=${GEMINI_API_KEY}
     command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
     networks:

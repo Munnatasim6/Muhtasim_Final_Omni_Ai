@@ -24,6 +24,7 @@ COPY apps/api_gateway /app/api
 # Fix: Legacy code support (পুরনো কোড যেন কাজ করে)
 COPY legacy_backup/backend /app/backend
 COPY core /app/core
+COPY config /app/config
 
 # PYTHONPATH আপডেট করা যাতে সব ফোল্ডার থেকে ইম্পোর্ট করা যায়
 ENV PYTHONPATH=/app:/app/libs:/app/backend:/app/core
