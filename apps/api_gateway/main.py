@@ -113,22 +113,30 @@ async def get_macro_data():
     regime = macro_correlator.analyze_risk_regime(corr)
     return {"regime": regime, "correlations": corr}
 
-# --- 3. Historical Data / Time Travel (MISSING PART FIXED) ---
-
+# --- 4. Historical Data (Time Travel) ---
 @app.get("/api/history/trades")
 async def get_trade_history(limit: int = 50):
-    """Fetches past trades from TimescaleDB."""
+    """
+    Returns past trades from TimescaleDB for performance analysis.
+    """
     try:
-        # Direct DB query using the existing db pool
+        # সরাসরি কানেকশন চেক করা হচ্ছে, কারণ startup_event এ db.connect() কল হবে
+        if not db.pool:
+            return {"error": "Database not connected"}
+            
         async with db.pool.acquire() as conn:
             rows = await conn.fetch(
-                "SELECT time, symbol, side, price, pnl FROM trade_history ORDER BY time DESC LIMIT $1", 
+                "SELECT time, symbol, side, price, pnl, strategy FROM trade_history ORDER BY time DESC LIMIT $1", 
                 limit
             )
-            return [dict(row) for row in rows]
+            # ডেটা JSON ফরম্যাটে কনভার্ট করা
+            return {
+                "count": len(rows),
+                "data": [dict(row) for row in rows]
+            }
     except Exception as e:
-        logger.error(f"DB Error: {e}")
-        return []
+        logger.error(f"History Fetch Error: {e}")
+        return {"error": str(e), "data": []}
 
 # --- WebSocket ---
 @app.websocket("/ws")
@@ -157,8 +165,16 @@ async def websocket_endpoint(websocket: WebSocket):
 # --- Startup ---
 @app.on_event("startup")
 async def startup_event():
-    logger.info("🚀 System Startup...")
-    await db.connect() # Ensure DB connects first
+    logger.info("🚀 Starting OmniTrade AI Core...")
+    
+    # [NEW] Database Connection
+    try:
+        await db.connect()
+        await db.create_tables()
+        logger.info("📦 Database Connected Successfully")
+    except Exception as e:
+        logger.error(f"⚠️ Database Connection Failed: {e}")
+
     # Start Background Tasks
     asyncio.create_task(social_scraper.start_stream())
     asyncio.create_task(defillama_tracker.run_cycle())

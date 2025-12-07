@@ -12,10 +12,11 @@ services:
       # Fix: Legacy backup mounting
       - ./legacy_backup/backend:/app/backend
       - ./core:/app/core
-      - ./services:/app/services
+      - ./services:/app/services # <--- [FIX 1] services folder mounted
     environment:
+      # [FIX 2] PYTHONPATH includes services
       - PYTHONPATH=/app:/app/libs:/app/backend:/app/core:/app/services
-      - DB_HOST=timescaledb
+      - DB_HOST=timescaledb # <--- [FIX 3] DB Host Fix
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - POSTGRES_USER=admin
@@ -58,7 +59,7 @@ services:
     volumes:
       - ./services/ai-brain:/app/brain
       - ./libs:/app/libs
-      - ./legacy_backup/core:/app/core
+      - ./core:/app/core # <--- [FIX 4] legacy_backup removed, core mounted
     networks:
       - ai-network
     environment:
