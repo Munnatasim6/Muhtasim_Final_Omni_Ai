@@ -18,7 +18,7 @@ const ScraperControls: React.FC = () => {
     setMessage(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/system/scale-scraper', {
+      const response = await fetch('/api/system/scale-scraper', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ replicas }),

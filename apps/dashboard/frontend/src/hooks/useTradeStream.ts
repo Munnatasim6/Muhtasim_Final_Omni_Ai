@@ -35,7 +35,7 @@ interface MultiChannelData {
     changeSymbol: (symbol: string, timeframe?: string) => void;
 }
 
-export const useTradeStream = (url: string = 'ws://localhost:8000/ws'): MultiChannelData => {
+export const useTradeStream = (url: string = `ws://${window.location.host}/ws`): MultiChannelData => {
     const [market, setMarket] = useState<MarketData | null>(null);
     const [brain, setBrain] = useState<BrainData | null>(null);
     const [system, setSystem] = useState<SystemData | null>(null);

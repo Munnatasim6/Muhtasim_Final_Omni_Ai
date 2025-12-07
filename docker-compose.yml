@@ -62,9 +62,29 @@ services:
       - ai-network
     environment:
       - PYTHONPATH=/app:/app/libs:/app/backend:/app/core
-      - REDIS_HOST=redis
       - REDIS_PORT=6379
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+  # 5. SOCIAL SCRAPER SCALABLE SERVICE
+  social-scraper:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    command: python core/scrapers/social_scraper.py
+    volumes:
+      - ./core:/app/core
+      - ./libs:/app/libs
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PYTHONPATH=/app:/app/libs
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - ai-network
+    depends_on:
+      - redis
 
   # DATABASE SERVICES
   timescaledb:

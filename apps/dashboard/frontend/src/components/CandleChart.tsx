@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createChart, ColorType, ISeriesApi, Time } from 'lightweight-charts';
 import { useTradeStream } from '../hooks/useTradeStream';
-import { Activity, Search, BarChart2, TrendingUp } from 'lucide-react';
+import { Activity, Search } from 'lucide-react';
 import { RSI, EMA, MACD, StochasticRSI, IchimokuCloud } from 'technicalindicators';
 
 const TIMEFRAMES = ['1m', '5m', '15m', '1h', '4h', '12h', '1d', '1w', '1M'];
@@ -130,7 +130,7 @@ const CandleChart: React.FC = () => {
             if (emaRes.length > 0) computed.ema = emaRes[emaRes.length - 1];
 
             const macdRes = MACD.calculate({ values: closes, fastPeriod: 12, slowPeriod: 26, signalPeriod: 9, SimpleMAOscillator: false, SimpleMASignal: false });
-            if (macdRes.length > 0) computed.macd = macdRes[macdRes.length - 1];
+            if (macdRes.length > 0) computed.macd = macdRes[macdRes.length - 1] as any;
 
             const stochRes = StochasticRSI.calculate({ values: closes, rsiPeriod: 14, stochasticPeriod: 14, kPeriod: 3, dPeriod: 3 });
             if (stochRes.length > 0) computed.stoch = stochRes[stochRes.length - 1];

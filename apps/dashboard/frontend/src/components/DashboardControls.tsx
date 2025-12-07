@@ -8,7 +8,7 @@ const DashboardControls: React.FC = () => {
   const callApi = async (endpoint: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/system/${endpoint}`, { method: 'POST' });
+      const res = await fetch(`/api/system/${endpoint}`, { method: 'POST' });
       if (res.ok) {
         if (endpoint === 'kill') setStatus('STOPPED');
         if (endpoint === 'resume') setStatus('ACTIVE');

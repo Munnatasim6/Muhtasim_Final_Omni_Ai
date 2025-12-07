@@ -1,5 +1,6 @@
 // Web Worker for running heavy WASM simulations off the main thread.
 
+// @ts-ignore
 import init, { run_heavy_sim } from "../../../rust_core/pkg/rust_core";
 
 self.onmessage = async (e: MessageEvent) => {

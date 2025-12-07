@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Zap, Shield, TrendingUp, Activity } from 'lucide-react';
+import { Brain, Activity, Shield } from 'lucide-react';
 import { useTradeStream } from '../hooks/useTradeStream';
 
 const BrainCore: React.FC = () => {

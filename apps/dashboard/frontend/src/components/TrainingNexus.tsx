@@ -27,7 +27,7 @@ const TrainingNexus: React.FC = () => {
     setLogs(prev => [...prev, `Initializing ${type} training sequence...`]);
 
     try {
-      const response = await fetch('http://localhost:8000/train', {
+      const response = await fetch('/api/train', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
